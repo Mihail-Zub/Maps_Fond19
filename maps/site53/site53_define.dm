@@ -32,14 +32,14 @@
 	map_admin_faxes = list("Foundation Central Office", "UIU Central Office", "GOC Central Office", "Horizon Initiative Central Office ", "Marshall, Carter, and Dark Central Office")
 
 	//These should probably be moved into the evac controller...
-	shuttle_docked_message = "The outbound train is now boarding at the Train Station. It will depart in approximately %ETD%."
-	shuttle_leaving_dock = "The outbound train for off-duty personnel is now departing, and will reach its first stop in %ETA%."
-	shuttle_called_message = "The work shift is now ending. The next outbound train for off-duty personnel will begin boarding in %ETA%."
-	shuttle_recall_message = "The work shift has been extended. Please return to your post."
-	emergency_shuttle_docked_message = "The emergency train is now boarding at the Train Station. Evacuation is mandatory for all Foundation personnel. It will depart in %ETD%."
-	emergency_shuttle_leaving_dock = "The emergency train is departing for Extraction Site 53-B and will arrive in %ETA%. Please cooperate with Responders upon arrival."
-	emergency_shuttle_called_message = "An emergency evacuation has been ordered for this facility. All authorized evacuees must proceed to the outbound Train Station within %ETA%."
-	emergency_shuttle_recall_message = "The emergency evacuation has been cancelled. Return to your post."
+	shuttle_docked_message = "Поезд прибыл на основные пути. Он покинет станцию, примерно через 3 минуты."
+	shuttle_leaving_dock = "Поезд для персонала уже отправляется с основных путей, и достигнет своей  остановки через 2 минуты."
+	shuttle_called_message = "В данный момент рабочая смена заканчивается. Следующий поезд для персонала, прибудет на основные пути через 10 минут."
+	shuttle_recall_message = "Рабочая смена была продлена. Пожалуйста, вернитесь к выполнению свои стандартных обязанностей."
+	emergency_shuttle_docked_message = "Эвакуационный поезд прибыл на основные пути. Процедура эвакуации является обязательной для всего персонала Фонда. Поезд покинет Комплекс через 3 минуты."
+	emergency_shuttle_leaving_dock = "Эвакуационный поезд покинул станцию и прибудет к своей остановке через 2 минуты. Пожалуйста, подчиняйтесь всем приказам Службы Безопасности и МОГ, до прибытия в назначенное место."
+	emergency_shuttle_called_message = "В Комплексе была объявлена процедура экстренной эвакуации. Весь персонал подлежащий эвакуации, должен прибыть на станцию в течении 10 минут."
+	emergency_shuttle_recall_message = "Экстренная эвакуация была отменена. Возвращайтесь к выполнению своих стандартных обязанностей."
 
 //	evac_controller_type = /datum/evacuation_controller/site
 

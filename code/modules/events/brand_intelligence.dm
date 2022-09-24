@@ -8,7 +8,7 @@
 
 
 /datum/event/brand_intelligence/announce()
-	command_announcement.Announce("Rampant brand intelligence has been detected at [location_name()]. The origin is believed to be \a \"[initial(originMachine.name)]\" type. Infection of other machines is likely.", "[location_name()] Machine Monitoring", zlevels = affecting_z)
+	command_announcement.Announce("На территории Комплекса обнаружен сбой в работе торговых автоматов, вызванный вмешательством извне. Предполагается, что источником сбоя является \"[initial(originMachine.name)]\". Есть высокая вероятность сбоя в работе других автоматов.", "Система датчиков Комплекса", zlevels = affecting_z)
 
 
 /datum/event/brand_intelligence/start()
@@ -57,7 +57,7 @@
 			continue
 		infectedMachine.shut_up = 1
 		infectedMachine.shoot_inventory = 0
-	command_announcement.Announce("All traces of the rampant brand intelligence have disappeared from the systems.", "[location_name()] Firewall Subroutines")
+	command_announcement.Announce("Все следы сбоя в работе торговых автоматов исчезли из системы.", "Файрвол внутренней сети")
 	originMachine = null
 	infectedVendingMachines.Cut()
 	vendingMachines.Cut()

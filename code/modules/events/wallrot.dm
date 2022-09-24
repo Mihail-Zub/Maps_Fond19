@@ -3,7 +3,7 @@
 	endWhen = announceWhen + 1
 
 /datum/event/wallrot/announce()
-	command_announcement.Announce("Containment breach of object class Keter detected. Structures may be contaminated with SCP-020.", "Biohazard Alert", zlevels = affecting_z)
+	command_announcement.Announce("Обнаружено нарушение ОУС объекта класса Кетер. Строения Комплекса могут подвергнуться заражению SCP-020.", "Биологическая опасность", zlevels = affecting_z)
 
 /datum/event/wallrot/start()
 	spawn()

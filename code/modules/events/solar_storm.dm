@@ -11,7 +11,7 @@
 	endWhen = startWhen + rand(30,90) + rand(30,90) //2-6 minute duration
 
 /datum/event/solar_storm/announce()
-	command_announcement.Announce("ERROR: Containment breach detected in decontamination zone thirteen.", "[location_name()] Sensor Array", zlevels = affecting_z)
+	command_announcement.Announce("ОШИБКА: Обнаружено нарушение герметичности на участке тринадцать.", "Система датчиков Комплекса", zlevels = affecting_z)
 	adjust_solar_output(1.5)
 
 /datum/event/solar_storm/proc/adjust_solar_output(var/mult = 1)
@@ -20,7 +20,7 @@
 
 
 /datum/event/solar_storm/start()
-	command_announcement.Announce("Object recontained. All personnel are to resume their regular duties, and amnestics are available upon request.", "[location_name()] Sensor Array", zlevels = affecting_z)
+	command_announcement.Announce("Нарушение герметичности устранено. Весь персонал может вернуться к выполнению свои стандартных обязанностей.", "Система датчиков Комплекса", zlevels = affecting_z)
 	adjust_solar_output(5)
 
 
@@ -48,7 +48,7 @@
 
 
 /datum/event/solar_storm/end()
-	command_announcement.Announce("Dr. Bright, please report to your office.", "Announcements Computer", zlevels = affecting_z)
+	command_announcement.Announce("Доктор Брайт, пожалуйста, прибудьте в свой офис.", "Система объявлений", zlevels = affecting_z)
 	adjust_solar_output()
 
 

@@ -11,14 +11,14 @@ The "dust" will damage the hull of the station causin minor hull breaches.
 	var/last_wave
 
 /datum/event/dust/announce()
-	command_announcement.Announce("ERROR: Containment breach of object class SAFE detected.", "[location_name()] Sensor Array", zlevels = affecting_z)
+	command_announcement.Announce("ОШИБКА: Обнаружено нарушение ОУС объекта класса Безопасный. Возможно проявление незначительной аномальной активности.", "Система датчиков Комплекса", zlevels = affecting_z)
 
 /datum/event/dust/tick()
 	if(world.time > last_wave + min_delay && prob(10))
 		dust_swarm(severity, affecting_z)
 
 /datum/event/dust/end()
-	command_announcement.Announce("Object class SAFE recontained. Amnestics available upon request.", "[location_name()] Sensor Array", zlevels = affecting_z)
+	command_announcement.Announce("ОУС объекта класса Безопасный были восстановлены.", "Система датчиков Комплекса", zlevels = affecting_z)
 
 /proc/dust_swarm(var/strength = EVENT_LEVEL_MUNDANE, var/list/zlevels = GLOB.using_map.station_levels)
 	var/numbers = rand(strength * 10, strength * 15)

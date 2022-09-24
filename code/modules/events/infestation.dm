@@ -41,19 +41,19 @@
 		if(VERM_MICE)
 			spawn_types = list(/mob/living/simple_animal/friendly/mouse) // The base mouse type selects a random color for us
 			max_number = 12
-			vermstring = "mice"
+			vermstring = "мыши"
 		if(VERM_SNAKES)
 			spawn_types = list(/mob/living/simple_animal/friendly/snek)
 			max_number = 9
-			vermstring = "snakes"
+			vermstring = "змеи"
 		if(VERM_LIZARDS)
 			spawn_types = list(/mob/living/simple_animal/friendly/lizard)
 			max_number = 6
-			vermstring = "lizards"
+			vermstring = "ящерицы"
 		if(VERM_SPIDERS)
 			spawn_types = list(/obj/effect/spider/spiderling)
 			max_number = 3
-			vermstring = "spiders"
+			vermstring = "пауки"
 
 	spawn(0)
 		var/num = 0
@@ -71,7 +71,7 @@
 				S.amount_grown = -1
 
 /datum/event/infestation/announce()
-	command_announcement.Announce("Bioscans indicate that [vermstring] have been breeding in \the [location]. Further infestation is likely if left unchecked.", "[location_name()] Biologic Sensor Network", zlevels = affecting_z)
+	command_announcement.Announce("Биосканирование показало, что [vermstring] расплодились в \"[location]\". Если срочно не принять меры, возможно их дальнейшее распространение.", "Биологичкские сенсоры Комплекса", zlevels = affecting_z)
 
 /datum/event/infestation/proc/set_location_get_infestation_turfs()
 	location = pick_area(list(/proc/is_not_space_area, /proc/is_station_area))

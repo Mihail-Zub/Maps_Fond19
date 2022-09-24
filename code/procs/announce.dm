@@ -101,7 +101,7 @@
 	GLOB.using_map.level_x_biohazard_announcement(7)
 
 /proc/ion_storm_announcement(list/affecting_z)
-	command_announcement.Announce("It has come to our attention that the [station_name()] passed through an ion storm.  Please monitor all electronic equipment for malfunctions.", "Anomaly Alert", zlevels = affecting_z)
+	command_announcement.Announce("Комплекс был подвержен воздействию ионосферной аномалии. Пожалуйста, контролируйте всё электрооборудование на предмет наличия неисправностей или сбоев в работе.", "Система датчиков Комплекса", zlevels = affecting_z)
 
 /proc/AnnounceArrival(var/mob/living/carbon/human/character, var/datum/job/job, var/join_message)
 	if(!istype(job) || !job.announced)
@@ -142,4 +142,4 @@
 	if(job.department_flag & EXP)
 		return "Exploration"
 	return "Common"
-	
+

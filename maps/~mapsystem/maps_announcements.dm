@@ -32,10 +32,10 @@
 	evacuation_controller.evac_called.Announce(replacetext(emergency_shuttle_called_message, "%ETA%", "[round(evacuation_controller.get_eta()/60)] minute\s."), new_sound = emergency_shuttle_called_sound)
 
 /datum/map/proc/grid_check_announcement()
-	command_announcement.Announce(replacetext(grid_check_message, "%STATION_NAME%", station_name()), "Automated Grid Check", new_sound = grid_check_sound)
+	command_announcement.Announce(replacetext(grid_check_message, "%STATION_NAME%", station_name()), "Автоматическая проверка энергосистемы", new_sound = grid_check_sound)
 
 /datum/map/proc/grid_restored_announcement()
-	command_announcement.Announce(replacetext(grid_restored_message, "%STATION_NAME%", station_name()), "Power Systems Nominal", new_sound = grid_restored_sound)
+	command_announcement.Announce(replacetext(grid_restored_message, "%STATION_NAME%", station_name()), "Работа энергосистемы восстановлена", new_sound = grid_restored_sound)
 
 /datum/map/proc/level_x_biohazard_announcement(var/bio_level)
 	if(!isnum(bio_level))
