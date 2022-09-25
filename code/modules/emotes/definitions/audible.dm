@@ -182,8 +182,8 @@
 	key = "giggle"
 	emote_message_3p = "хихикает."
 	emote_sound = list(
-		MALE = list('sound/FIJ_Team/voice/giggle_female_1.ogg', 'sound/FIJ_Team/voice/giggle_female_2.ogg', 'sound/FIJ_Team/voice/giggle_female_3.ogg'),
-		FEMALE = list('sound/FIJ_Team/voice/giggle_male_1.ogg', 'sound/FIJ_Team/voice/giggle_male_2.ogg'))
+		MALE = list('sound/FIJ_Team/voice/giggle_male_1.ogg', 'sound/FIJ_Team/voice/giggle_male_2.ogg'),
+		FEMALE = list('sound/FIJ_Team/voice/giggle_female_1.ogg', 'sound/FIJ_Team/voice/giggle_female_2.ogg', 'sound/FIJ_Team/voice/giggle_female_3.ogg'))
 
 /decl/emote/audible/scream
 	key = "scream"
