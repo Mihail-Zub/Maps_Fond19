@@ -1,4 +1,4 @@
-/var/server_name = "Foundation 19"
+/var/server_name = "FIJTeam Project F19"
 /var/game_id = null
 
 GLOBAL_VAR(href_logfile)

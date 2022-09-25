@@ -5,38 +5,47 @@
 
 /decl/emote/audible/deathgasp_alien
 	key = "deathgasp"
-	emote_message_3p = "lets out a waning guttural screech, green blood bubbling from its maw."
+	emote_message_3p = "издает слабеющий гортанный крик, зеленая кровь пузырится из его пасти."
 
 /decl/emote/audible/whimper
 	key = "whimper"
-	emote_message_3p = "whimpers."
+	emote_message_3p = "хнычет."
 
 /decl/emote/audible/gasp
 	key = "gasp"
-	emote_message_3p = "gasps."
+	emote_message_3p = "задыхается."
 	conscious = 0
+	emote_sound = list(
+		MALE = list(
+			'sound/FIJ_Team/voice/gasp_male1.ogg', 'sound/FIJ_Team/voice/gasp_male2.ogg',
+			'sound/FIJ_Team/voice/gasp_male4.ogg', 'sound/FIJ_Team/voice/gasp_male5.ogg', 
+			'sound/FIJ_Team/voice/gasp_male6.ogg', 'sound/FIJ_Team/voice/gasp_male7.ogg'),
+		FEMALE = list(
+			'sound/FIJ_Team/voice/gasp_female1.ogg', 'sound/FIJ_Team/voice/gasp_female3.ogg',
+			'sound/FIJ_Team/voice/gasp_female4.ogg', 'sound/FIJ_Team/voice/gasp_female5.ogg', 
+			'sound/FIJ_Team/voice/gasp_female6.ogg', 'sound/FIJ_Team/voice/gasp_female7.ogg'))
 
 /decl/emote/audible/scretch
 	key = "scretch"
-	emote_message_3p = "scretches."
+	emote_message_3p = "чешется."
 
 /decl/emote/audible/choke
 	key = "choke"
-	emote_message_3p = "chokes."
+	emote_message_3p = "давится."
 	conscious = 0
 
 /decl/emote/audible/gnarl
 	key = "gnarl"
-	emote_message_3p = "gnarls and shows its teeth.."
+	emote_message_3p = "оскаливается и показывает зубы.."
 
 /decl/emote/audible/chirp
 	key = "chirp"
-	emote_message_3p = "chirps!"
+	emote_message_3p = "щебечет!"
 	emote_sound = 'sound/misc/nymphchirp.ogg'
 
 /decl/emote/audible/multichirp
 	key = "mchirp"
-	emote_message_3p = "chirps a chorus of notes!"
+	emote_message_3p = "щебечет хор нот!"
 	emote_sound = 'sound/misc/multichirp.ogg'
 
 /decl/emote/audible/alarm
@@ -56,8 +65,9 @@
 
 /decl/emote/audible/whistle
 	key = "whistle"
-	emote_message_1p = "You whistle."
-	emote_message_3p = "whistles."
+	emote_message_1p = "Вы свистите."
+	emote_message_3p = "свистит."
+	emote_sound = 'sound/FIJ_Team/voice/whistle.ogg'
 
 /decl/emote/audible/boop
 	key = "boop"
@@ -66,28 +76,40 @@
 
 /decl/emote/audible/sneeze
 	key = "sneeze"
-	emote_message_3p = "sneezes."
+	emote_message_3p = "чихает."
+	emote_sound = list(
+		MALE = list('sound/FIJ_Team/voice/sneeze_male_1.ogg', 'sound/FIJ_Team/voice/sneeze_male_2.ogg'),
+		FEMALE = list('sound/FIJ_Team/voice/sneeze_female_1.ogg', 'sound/FIJ_Team/voice/sneeze_female_2.ogg'))
 
 /decl/emote/audible/sniff
 	key = "sniff"
-	emote_message_3p = "sniffs."
+	emote_message_3p = "нюхает."
 
 /decl/emote/audible/snore
 	key = "snore"
-	emote_message_3p = "snores."
+	emote_message_3p = "храпит."
 	conscious = 0
+	emote_sound = list(
+		'sound/FIJ_Team/voice/snore_1.ogg', 'sound/FIJ_Team/voice/snore_2.ogg',
+		'sound/FIJ_Team/voice/snore_3.ogg', 'sound/FIJ_Team/voice/snore_4.ogg',
+		'sound/FIJ_Team/voice/snore_5.ogg', 'sound/FIJ_Team/voice/snore_6.ogg',
+		'sound/FIJ_Team/voice/snore_7.ogg')
 
 /decl/emote/audible/whimper
 	key = "whimper"
-	emote_message_3p = "whimpers."
+	emote_message_3p = "хнычет."
 
 /decl/emote/audible/yawn
 	key = "yawn"
-	emote_message_3p = "yawns."
+	emote_message_3p = "зевает."
+	emote_sound = list(
+		MALE = list('sound/FIJ_Team/voice/yawn_male_1.ogg', 'sound/FIJ_Team/voice/yawn_male_2.ogg'),
+		FEMALE = list('sound/FIJ_Team/voice/yawn_female_1.ogg', 'sound/FIJ_Team/voice/yawn_female_2.ogg',
+						'sound/FIJ_Team/voice/yawn_female_3.ogg'))
 
 /decl/emote/audible/clap
 	key = "clap"
-	emote_message_3p = "claps."
+	emote_message_3p = "хлопает."
 	emote_sound = list(
 		'sound/misc/clap1.ogg',
 		'sound/misc/clap2.ogg',
@@ -97,29 +119,38 @@
 
 /decl/emote/audible/chuckle
 	key = "chuckle"
-	emote_message_3p = "chuckles."
+	emote_message_3p = "усмехается."
 
 /decl/emote/audible/cough
 	key = "cough"
-	emote_message_3p = "coughs!"
+	emote_message_3p = "кашляет."
 	conscious = 0
+	emote_sound = list(
+		MALE = 'sound/FIJ_Team/voice/cough_male.ogg',
+		FEMALE = 'sound/FIJ_Team/voice/cough_female.ogg')
 
 /decl/emote/audible/cry
 	key = "cry"
-	emote_message_3p = "cries."
+	emote_message_3p = "плачет."
+	emote_sound = list(
+		MALE = list('sound/FIJ_Team/voice/cry_male_1.ogg', 'sound/FIJ_Team/voice/cry_male_2.ogg'),
+		FEMALE = list('sound/FIJ_Team/voice/cry_female_1.ogg', 'sound/FIJ_Team/voice/cry_female_2.ogg',
+						'sound/FIJ_Team/voice/cry_female_3.ogg'))
 
 /decl/emote/audible/sigh
 	key = "sigh"
-	emote_message_3p = "sighs."
+	emote_message_3p = "вздыхает."
+	emote_sound = list(
+		MALE = 'sound/FIJ_Team/voice/sigh_male.ogg',
+		FEMALE = 'sound/FIJ_Team/voice/sigh_female.ogg')
 
 /decl/emote/audible/laugh
 	key = "laugh"
-	emote_message_3p_target = "laughs at TARGET."
-	emote_message_3p = "laughs."
+	emote_message_3p_target = "смеется над TARGET."
+	emote_message_3p = "смеется."
 	emote_sound = list(
-		FEMALE = list('sound/voice/human/womanlaugh.ogg'),
-		MALE = list('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg')
-	)
+		MALE = list('sound/FIJ_Team/voice/laugh_male_1.ogg', 'sound/FIJ_Team/voice/laugh_male_2.ogg', 'sound/FIJ_Team/voice/laugh_male_3.ogg'),
+		FEMALE = list('sound/FIJ_Team/voice/laugh_female_1.ogg', 'sound/FIJ_Team/voice/laugh_female_2.ogg', 'sound/FIJ_Team/voice/laugh_female_3.ogg'))
 
 /decl/emote/audible/laugh/do_sound(atom/user)
 	if(!ishuman(user))
@@ -131,63 +162,70 @@
 
 /decl/emote/audible/mumble
 	key = "mumble"
-	emote_message_3p = "mumbles!"
+	emote_message_3p = "бормочет."
 
 /decl/emote/audible/grumble
 	key = "grumble"
-	emote_message_3p = "grumbles!"
+	emote_message_3p = "бурчит."
 
 /decl/emote/audible/groan
 	key = "groan"
-	emote_message_3p = "groans!"
+	emote_message_3p = "болезненно стонет!"
 	conscious = 0
 
 /decl/emote/audible/moan
 	key = "moan"
-	emote_message_3p = "moans!"
+	emote_message_3p = "стонет!"
 	conscious = 0
 
 /decl/emote/audible/giggle
 	key = "giggle"
-	emote_message_3p = "giggles."
+	emote_message_3p = "хихикает."
+	emote_sound = list(
+		MALE = list('sound/FIJ_Team/voice/giggle_female_1.ogg', 'sound/FIJ_Team/voice/giggle_female_2.ogg', 'sound/FIJ_Team/voice/giggle_female_3.ogg'),
+		FEMALE = list('sound/FIJ_Team/voice/giggle_male_1.ogg', 'sound/FIJ_Team/voice/giggle_male_2.ogg'))
 
 /decl/emote/audible/scream
 	key = "scream"
-	emote_message_3p = "screams!"
+	emote_message_3p = "кричит!"
+	emote_sound = list(
+		MALE = list('sound/FIJ_Team/voice/scream_male_1.ogg', 'sound/FIJ_Team/voice/scream_male_2.ogg',
+					'sound/FIJ_Team/voice/scream_male_3.ogg'),
+		FEMALE = list('sound/FIJ_Team/voice/scream_female_1.ogg', 'sound/FIJ_Team/voice/scream_female_2.ogg'))
 
 /decl/emote/audible/grunt
 	key = "grunt"
-	emote_message_3p = "grunts."
+	emote_message_3p = "ворчит."
 
 /decl/emote/audible/slap
 	key = "slap"
-	emote_message_1p_target = "You slap TARGET across the face!"
-	emote_message_1p = "You slap yourself across the face!"
-	emote_message_3p_target = "slaps TARGET across the face!"
-	emote_message_3p = "slaps USER_SELF across the face!"
+	emote_message_1p_target = "Вы бьете TARGET по лицу!"
+	emote_message_1p = "Ты бьешь себя по лицу!"
+	emote_message_3p_target = "ударяет TARGET по лицу!"
+	emote_message_3p = "ударяет USER_SELF по лицу!"
 	emote_sound = 'sound/effects/snap.ogg'
 	check_restraints = TRUE
 	check_range = 1
 
 /decl/emote/audible/bug_hiss
 	key = "hiss"
-	emote_message_3p_target = "hisses at TARGET."
-	emote_message_3p = "hisses."
+	emote_message_3p_target = "шипит на TARGET."
+	emote_message_3p = "шипит."
 	emote_sound = 'sound/voice/BugHiss.ogg'
 
 /decl/emote/audible/bug_buzz
 	key = "buzz"
-	emote_message_3p = "buzzes its wings."
+	emote_message_3p = "жужжит."
 	emote_sound = 'sound/voice/BugBuzz.ogg'
 
 /decl/emote/audible/bug_chitter
 	key = "chitter"
-	emote_message_3p = "chitters."
+	emote_message_3p = "верещит."
 	emote_sound = 'sound/voice/Bug.ogg'
 
 /decl/emote/audible/roar
 	key = "roar"
-	emote_message_3p = "roars!"
+	emote_message_3p = "издаёт рык!"
 
 /decl/emote/audible/bellow
 	key = "bellow"
