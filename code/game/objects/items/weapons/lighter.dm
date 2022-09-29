@@ -68,11 +68,11 @@
 /obj/item/flame/lighter/on_update_icon()
 	var/datum/extension/base_icon_state/bis = get_extension(src, /datum/extension/base_icon_state)
 
-	overlays.Cut()
+	cut_overlays()
 	if(lit)
-		overlays += overlay_image(icon, "[bis.base_icon_state]_flame", flags=RESET_COLOR)
+		add_overlay(overlay_image(icon, "[bis.base_icon_state]_flame", flags=RESET_COLOR))
 	else
-		overlays += overlay_image(icon, "[bis.base_icon_state]_striker", flags=RESET_COLOR)
+		add_overlay(overlay_image(icon, "[bis.base_icon_state]_striker", flags=RESET_COLOR))
 
 /obj/item/flame/lighter/attack(var/mob/living/M, var/mob/living/carbon/user)
 	if(!istype(M, /mob))
@@ -142,11 +142,11 @@
 /obj/item/flame/lighter/zippo/on_update_icon()
 	var/datum/extension/base_icon_state/bis = get_extension(src, /datum/extension/base_icon_state)
 
-	overlays.Cut()
+	cut_overlays()
 	if(lit)
 		icon_state = "[bis.base_icon_state]_open"
 		item_state = "[bis.base_icon_state]_open"
-		overlays += overlay_image(icon, "[bis.base_icon_state]_flame", flags=RESET_COLOR)
+		add_overlay(overlay_image(icon, "[bis.base_icon_state]_flame", flags=RESET_COLOR))
 	else
 		icon_state = "[bis.base_icon_state]"
 		item_state = "[bis.base_icon_state]"
@@ -165,8 +165,6 @@
 		O.reagents.trans_to_obj(src, max_fuel)
 		to_chat(user, "<span class='notice'>You refuel [src] from \the [O]</span>")
 		playsound(src.loc, 'sound/effects/refill.ogg', 50, 1, -6)
-	else if(lit && istype(O))
-		O.HandleObjectHeating(src, user, 700)
 
 /obj/item/flame/lighter/zippo/black
 	color = COLOR_DARK_GRAY
