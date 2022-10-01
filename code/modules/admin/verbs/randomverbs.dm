@@ -541,7 +541,7 @@ Ccomp's first proc.
 	if(!input)
 		return
 	if(!customname)
-		customname = "[GLOB.using_map.boss_name] Update"
+		customname = "Оповещение Совета О5"
 
 	//New message handling
 	post_comm_message(customname, replacetext(input, "\n", "<br/>"))
