@@ -64,27 +64,27 @@ var/datum/paiController/paiController			// Global handler for pAI candidates
 			if("name")
 				t = sanitizeSafe(input("Enter a name for your pAI", "pAI Name", candidate.name) as text, MAX_NAME_LEN)
 				if(t)
-					candidate.name = t
+					candidate.name = sanitize(copytext_char(t,1,MAX_NAME_LEN))
 			if("desc")
 				t = input("Enter a description for your pAI", "pAI Description", candidate.description) as message
 				if(t)
-					candidate.description = sanitize(t)
+					candidate.description = sanitize(copytext_char(t,1,MAX_NAME_LEN))
 			if("role")
 				t = input("Enter a role for your pAI", "pAI Role", candidate.role) as text
 				if(t)
-					candidate.role = sanitize(t)
+					candidate.role = sanitize(copytext_char(t,1,MAX_NAME_LEN))
 			if("ooc")
 				t = input("Enter any OOC comments", "pAI OOC Comments", candidate.comments) as message
 				if(t)
-					candidate.comments = sanitize(t)
+					candidate.comments = sanitize(copytext_char(t,1,MAX_NAME_LEN))
 			if("chassis")
 				t = input(usr,"What would you like to use for your mobile chassis icon?") as null|anything in GLOB.possible_chassis
 				if(t)
-					candidate.chassis = t
+					candidate.chassis = sanitize(copytext_char(t,1,MAX_NAME_LEN))
 			if("say")
 				t = input(usr,"What theme would you like to use for your speech verbs?") as null|anything in GLOB.possible_say_verbs
 				if(t)
-					candidate.say_verb = t
+					candidate.say_verb = sanitize(copytext_char(t,1,MAX_NAME_LEN))
 			if("save")
 				candidate.savefile_save(usr)
 			if("load")
@@ -126,7 +126,7 @@ var/datum/paiController/paiController			// Global handler for pAI candidates
 		candidate.key = M.key
 		pai_candidates.Add(candidate)
 
-	var/dat = ""
+	var/dat = {"<meta charset="UTF-8">"}
 	dat += {"
 			<style type="text/css">
 				body {
@@ -186,7 +186,7 @@ var/datum/paiController/paiController			// Global handler for pAI candidates
 			"}
 
 	dat += {"
-	<body>
+	<meta charset=\"UTF-8\"><body>
 		<b><font size="3px">pAI Personality Configuration</font></b>
 		<p class="top">Please configure your pAI personality's options. Remember, what you enter here could determine whether or not the user requesting a personality chooses you!</p>
 
@@ -273,6 +273,7 @@ var/datum/paiController/paiController			// Global handler for pAI candidates
 	dat += {"
 		<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">
 		<html>
+			<meta charset="UTF-8">
 			<head>
 				<style>
 					body {
@@ -334,7 +335,7 @@ var/datum/paiController/paiController			// Global handler for pAI candidates
 					}
 				</style>
 			</head>
-			<body>
+			<meta charset=\"UTF-8\"><body>
 				<b><font size='3px'>pAI Availability List</font></b><br><br>
 	"}
 	dat += "<p>Displaying available AI personalities from central database... If there are no entries, or if a suitable entry is not listed, check again later as more personalities may be added.</p>"

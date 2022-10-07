@@ -2,32 +2,23 @@
 <p align="center">Secure. Contain. Protect.
 
 # Foundation-19
-### Welcome to the code repository for **Foundation-19**, a modified fork of [BayStation 12](https://github.com/Baystation12/Baystation12), rebased onto [TeguStation](https://github.com/vlggms/tegustation).
+### Добро пожаловать в репозиторий русского форка **Foundation-19**, основанного на [BayStation 12](https://github.com/Baystation12/Baystation12), перебазированном на [TeguStation](https://github.com/vlggms/tegustation).
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-resentment.svg)](#) [![forthebadge](https://forthebadge.com/images/badges/contains-tasty-spaghetti-code.svg)](#) [![forinfinityandbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
 
-[![Build Status](https://github.com/foundation-19/foundation-19/workflows/CI%20Suite/badge.svg)](https://github.com/foundation-19/foundation-19/actions?query=workflow%3A%22CI+Suite%22)
-[![Percentage of issues still open](https://isitmaintained.com/badge/open/foundation-19/foundation-19.svg)](https://isitmaintained.com/project/vlggms/tegustation "Percentage of issues still open")
-[![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/foundation-19/foundation-19.svg)](https://isitmaintained.com/project/vlggms/tegustation "Average time to resolve an issue")
+## Комьюнити
+[<img src=".github/assets/discord.png" alt="Discord" width="150" align="left">](https://discord.gg/cZz6mNt)
+**Discord-сервер** проекта является нашей основной площадкой для общения и связи с игроками. Там вы сможете получать все необходмые новости касательно проекта, вести открытое общение с другими игроками, а также иметь доступ ко множеству различных полезных каналов.
 
-## Community
-[<img src=".github/assets/discord.png" alt="Discord" width="150" align="left">](https://discord.gg/GbqVYJJAFk)
-Discord is the place where most of the discussion happens, due to absence of a forum. Here you can contact administrators, ask mentors for help, or simply discuss your rounds. It is also a place where you can find links to ban appeals, admin applications and others, which could be really useful.
+**Space Station 13** это многопользовательская компьютерная игра о работе и жизни персонала на космической станции с элементами выживания. Игра разработана независимым разработчиком Exadv1 на игровом движке «BYOND», имеет тайловую 2D графику и доступна на платформах Windows. Данная сборка основана на вселенной SCP, где действия игры разворачиваются в **Site 53**.
 
-**Space Station 13** is a paranoia-laden round-based roleplaying game set against the backdrop of a nonsensical, metal death trap masquerading as a space station, with charming spritework designed to represent the sci-fi setting and its dangerous undertones. This is an SCP inspired flavour, set on **Site 53**.
+## :exclamation: Инструкция по компиляции :exclamation:
 
-## Information
-* **Code:** https://github.com/foundation-19/foundation-19
-* **SS13 Coderbus Discord:** https://discord.gg/Vh8TJp9
-* **Foundation-19 Wiki:** https://scp13.miraheze.org/wiki/Main_Page
+**Быстрый способ**. Найти `bin/server.cmd` по указанному пути и запустить его двойным кликом, для автоматической компиляции и создания сервера с портом 1337.
 
-## :exclamation: How to compile :exclamation:
+**Долгий способ**. Найти `bin/build.cmd` по указанному пути и запустить его двойным кликом для начала компиляции. Она состоит из нескольких шагов и может занять в районе 1-5 минут времени. Как только окно закроется, компиляцию можно считать завершённой. После этого, вы можете запустить свой локальный сервер при помощи DreamDaemon, выбрав файл `baystation12.dmb` лежащий в корневой папки сборки.
 
-**The quick way**. Find `bin/server.cmd` in this folder and double click it to automatically build and host the server on port 1337.
-
-**The long way**. Find `bin/build.cmd` in this folder, and double click it to initiate the build. It consists of multiple steps and might take around 1-5 minutes to compile. If it closes, it means it has finished its job. You can then set up the server normally by opening `baystation12.dmb` in DreamDaemon.
-
-**Building baystation12.dmb in DreamMaker directly is now deprecated and might produce errors**, such as `'tgui.bundle.js': cannot find file`.
+**Компиляция baystation12.dmb напрямую через DreamMaker не рекомендуется и может вызвать ошибки**, такие как `'tgui.bundle.js': cannot find file`.
 
 **[How to compile in VSCode and other build options](tools/build/README.md).**
 

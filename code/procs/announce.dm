@@ -12,11 +12,11 @@
 	var/announcement_type = "Announcement"
 
 /datum/announcement/priority
-	title = "Priority Announcement"
+	title = "Приоритетное оповещение"
 	announcement_type = "Priority Announcement"
 
 /datum/announcement/priority/security
-	title = "Security Announcement"
+	title = "Оповещение Службы безопасности"
 	announcement_type = "Security Announcement"
 
 /datum/announcement/New(var/do_log = 0, var/new_sound = null, var/do_newscast = 0)
@@ -26,7 +26,7 @@
 
 /datum/announcement/priority/command/New(var/do_log = 1, var/new_sound = 'sound/misc/notice2.ogg', var/do_newscast = 0)
 	..(do_log, new_sound, do_newscast)
-	title = "[GLOB.using_map.boss_name] Update"
+	title = "Оповещение Совета О5"
 	announcement_type = "[GLOB.using_map.boss_name] Update"
 
 /datum/announcement/proc/Announce(var/message as text, var/new_title = "", var/new_sound = null, var/do_newscast = newscast, var/msg_sanitized = 0, var/zlevels = GLOB.using_map.contact_levels)
@@ -70,7 +70,7 @@
 	. += "<br>"
 
 /datum/announcement/priority/command/FormMessage(message as text, message_title as text)
-	. = "<h1 class='alert'>[GLOB.using_map.boss_name] Update</h1>"
+	. = "<h1 class='alert'>Оповещение Совета О5</h1>"
 	if (message_title)
 		. += "<br><h2 class='alert'>[message_title]</h2>"
 
@@ -101,7 +101,7 @@
 	GLOB.using_map.level_x_biohazard_announcement(7)
 
 /proc/ion_storm_announcement(list/affecting_z)
-	command_announcement.Announce("It has come to our attention that the [station_name()] passed through an ion storm.  Please monitor all electronic equipment for malfunctions.", "Anomaly Alert", zlevels = affecting_z)
+	command_announcement.Announce("Комплекс был подвержен воздействию ионосферной аномалии. Пожалуйста, контролируйте всё электрооборудование на предмет наличия неисправностей или сбоев в работе.", "Система датчиков Комплекса", zlevels = affecting_z)
 
 /proc/AnnounceArrival(var/mob/living/carbon/human/character, var/datum/job/job, var/join_message)
 	if(!istype(job) || !job.announced)
@@ -142,4 +142,4 @@
 	if(job.department_flag & EXP)
 		return "Exploration"
 	return "Common"
-	
+

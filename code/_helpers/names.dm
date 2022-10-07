@@ -126,9 +126,9 @@ var/syndicate_code_response//Code response for traitors.
 	)
 
 	var/safety[] = list(1,2,3)//Tells the proc which options to remove later on.
-	var/nouns[] = list("love","hate","anger","peace","pride","sympathy","bravery","loyalty","honesty","integrity","compassion","charity","success","courage","deceit","skill","beauty","brilliance","pain","misery","beliefs","dreams","justice","truth","faith","liberty","knowledge","thought","information","culture","trust","dedication","progress","education","hospitality","leisure","trouble","friendships", "relaxation")
-	var/drinks[] = list("vodka and tonic","gin fizz","bahama mama","manhattan","black Russian","whiskey soda","long island tea","margarita","Irish coffee"," manly dwarf","Irish cream","doctor's delight","Beepksy Smash","tequilla sunrise","brave bull","gargle blaster","bloody mary","whiskey cola","white Russian","vodka martini","martini","Cuba libre","kahlua","vodka","wine","moonshine")
-	var/locations[] = length(stationlocs) ? stationlocs : drinks//if null, defaults to drinks instead.
+	var/nouns[] = list("любовь","ненависть","гнев","мир","гордость","сочувствие","храбрость","лояльность","честность","целостность","сострадание","благотворительность","успех","мужество","обман","умение","красота","блеск","боль","страдание","убеждения","мечты","справедливость","правда","вера","свобода","знания","мысль","информация","культура","доверять","преданность","прогресс","образование","гостеприимство","досуг","беда","дружба", "расслабление")
+//	var/drinks[] = list("vodka and tonic","gin fizz","bahama mama","manhattan","black Russian","whiskey soda","long island tea","margarita","Irish coffee"," manly dwarf","Irish cream","doctor's delight","Beepksy Smash","tequilla sunrise","brave bull","gargle blaster","bloody mary","whiskey cola","white Russian","vodka martini","martini","Cuba libre","kahlua","vodka","wine","moonshine")
+//	var/locations[] = length(stationlocs) ? stationlocs : drinks//if null, defaults to drinks instead.
 
 	var/names[] = list()
 	for(var/datum/computer_file/report/crew_record/t in GLOB.all_crew_records)//Picks from crew manifest.
@@ -142,7 +142,7 @@ var/syndicate_code_response//Code response for traitors.
 			safety = list(pick(1,2))//Select choice 1 or 2.
 		else if(words==1&&maxwords==2)//Else if there is only one word remaining (and there were two originally), and 1 or 2 were chosen,
 			safety = list(3)//Default to list 3
-
+/*
 		switch(pick(safety))//Chance based on the safety list.
 			if(1)//1 and 2 can only be selected once each to prevent more than two specific names/places/etc.
 				switch(rand(1,2))//Mainly to add more options later.
@@ -164,13 +164,14 @@ var/syndicate_code_response//Code response for traitors.
 						code_phrase += pick(locations)
 				safety -= 2
 			if(3)
-				switch(rand(1,3))//Nouns, adjectives, verbs. Can be selected more than once.
-					if(1)
-						code_phrase += pick(nouns)
-					if(2)
-						code_phrase += pick(GLOB.adjectives)
-					if(3)
-						code_phrase += pick(GLOB.verbs)
+			*/
+		switch(rand(1,3))//Nouns, adjectives, verbs. Can be selected more than once.
+			if(1)
+				code_phrase += pick(nouns)
+			if(2)
+				code_phrase += pick(GLOB.adjectives)
+			if(3)
+				code_phrase += pick(GLOB.verbs)
 		if(words==1)
 			code_phrase += "."
 		else

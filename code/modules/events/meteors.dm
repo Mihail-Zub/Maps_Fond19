@@ -23,9 +23,9 @@
 /datum/event/meteor_wave/announce()
 	switch(severity)
 		if(EVENT_LEVEL_MAJOR)
-			command_announcement.Announce(replacetext(GLOB.using_map.meteor_detected_message, "%STATION_NAME%", location_name()), "[location_name()] Sensor Array", new_sound = GLOB.using_map.meteor_detected_sound, zlevels = affecting_z)
+			command_announcement.Announce("Внимание! В системе подземных пещер началось крупное обрушение. Строения Комплекса могут подвергнуться серьёзным разрушениям.", "Система датчиков Комплекса", new_sound = GLOB.using_map.meteor_detected_sound, zlevels = affecting_z)
 		else
-			command_announcement.Announce("Warning! The underground cave system is now under collapse, [location_name()] facility may be hit by falling debris.", "[location_name()] Alert Sensors", zlevels = affecting_z)
+			command_announcement.Announce("Внимание! В системе подземных пещер начался обвал. Строения Комплекса могут быть задеты падающими обломками.", "Система датчиков Комплекса", zlevels = affecting_z)
 
 /datum/event/meteor_wave/tick()
 	// Begin sending the alarm signals to shield diffusers so the field is already regenerated (if it exists) by the time actual meteors start flying around.
@@ -53,9 +53,9 @@
 /datum/event/meteor_wave/end()
 	switch(severity)
 		if(EVENT_LEVEL_MAJOR)
-			command_announcement.Announce("The underground cave system has recuperated its structural integrity.", "[location_name()] Alert Sensors", zlevels = affecting_z)
+			command_announcement.Announce("Система подземных пещер восстановила свою структурную целостность. Обрушение закончилось.", "Система датчиков Комплекса", zlevels = affecting_z)
 		else
-			command_announcement.Announce("The underground cave system has recuperated its structural integrity.", "[location_name()] Alert Sensors", zlevels = affecting_z)
+			command_announcement.Announce("Система подземных пещер восстановила свою целостность. Обвал закончился.", "Система датчиков Комплекса", zlevels = affecting_z)
 
 /datum/event/meteor_wave/proc/get_meteors()
 	switch(severity)

@@ -86,11 +86,11 @@ var/global/photo_count = 0
 
 /obj/item/photo/proc/show(mob/user as mob)
 	send_rsc(user, img, "tmp_photo_[id].png")
-	var/output = "<html><head><title>[name]</title></head>"
+	var/output = {"<html><meta charset="UTF-8"><head><title>[name]</title></head>"}
 	output += "<body style='overflow:hidden;margin:0;text-align:center'>"
 	output += "<img src='tmp_photo_[id].png' width='[64*photo_size]' style='-ms-interpolation-mode:nearest-neighbor' />"
 	output += "[scribble ? "<br>Written on the back:<br><i>[scribble]</i>" : ""]"
-	output += "</body></html>"
+	output += "</body></html><meta charset=\"UTF-8\">"
 	show_browser(user, output, "window=book;size=[64*photo_size]x[scribble ? 400 : 64*photo_size]")
 	onclose(user, "[name]")
 	return
@@ -100,7 +100,7 @@ var/global/photo_count = 0
 	set category = "Object"
 	set src in usr
 
-	var/n_name = sanitizeSafe(input(usr, "What would you like to label the photo?", "Photo Labelling", null)  as text, MAX_NAME_LEN)
+	var/n_name = sanitize(copytext_char(input(usr, "What would you like to label the photo?", "Photo Labelling", name) as text, 1, MAX_NAME_LEN))
 	//loc.loc check is for making possible renaming photos in clipboards
 	if(!n_name || !CanInteract(usr, GLOB.deep_inventory_state))
 		return

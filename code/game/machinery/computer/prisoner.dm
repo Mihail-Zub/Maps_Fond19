@@ -22,7 +22,7 @@
 	if(..())
 		return
 	user.set_machine(src)
-	var/dat
+	var/dat = {"<meta charset="UTF-8">"}
 	dat += "<B>Prisoner Implant Manager System</B><BR>"
 	if(screen == 0)
 		dat += "<HR><A href='?src=\ref[src];lock=1'>Unlock Console</A>"
@@ -93,7 +93,7 @@
 				to_chat(usr, "Unauthorized Access.")
 
 		else if(href_list["warn"])
-			var/warning = sanitize(input(usr,"Message:","Enter your message here!",""))
+			var/warning = sanitize(copytext_char(input(usr,"Message:","Enter your message here!",""),1,MAX_MESSAGE_LEN))
 			if(!warning) return
 			var/obj/item/implant/I = locate(href_list["warn"])
 			if((I)&&(I.imp_in))

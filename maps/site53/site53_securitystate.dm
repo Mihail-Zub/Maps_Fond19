@@ -25,7 +25,7 @@
 	var/static/datum/announcement/priority/security/security_announcement_green = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/AI/announcer/codegreen.ogg', volume = 150))
 
 /decl/security_level/default/site53/code_green/switching_down_to()
-	security_announcement_green.Announce("The situation has been resolved, and all personnel are to return to their regular duties.", "Attention! Alert level lowered to code green.")
+	security_announcement_green.Announce("Ситуация урегулирована, весь персонал должен вернуться к выполнению своих стандартных обязанностей.", "Внимание! Уровень тревоги понижен до Зелёного.")
 	notify_station()
 
 /decl/security_level/default/site53/code_yellow
@@ -41,8 +41,8 @@
 	overlay_alarm = "alarm_yellow"
 	overlay_status_display = "status_display_yellow"
 
-	up_description = "Code Yellow procedures now in effect. A test on a Euclid SCP will commence shortly. Guards are to be posted at sensitive entry area's and maintain their post there until the all clear. Civilian and Scientists unrelated to the on-going test are to vacate the relevant zone before the test commences and kept there until the all clear. Violation of these procedures is grounds for immediate termination."
-	down_description = "Code Yellow procedures now in effect. Code Blue has been resolved, but all area's should be swept for threats extensively, and the integrity of all chambers should be inspected. All SCP's must be accounted for."
+	up_description = "Запущены процедуры Жёлтого кода. В ближайшее время начнутся испытания на объектах класса Евклид. Охрана должна занять посты в наиболее важных зонах, а также на КПП. Гражданские лица и ученые никак не связанные с проведением испытаний, должны покинуть место их проведения и держаться от него в стороне, вплоть до их окончания. Нарушение данных процедур является основанием для немедленного устранения."
+	down_description = "Запущены процедуры Жёлтого кода. Синий код был отменён, но остаётся необходимым осмотреть все зоны на наличие каких-либо угроз, а также проверить камеры объектов класса Евклид на наличие любых повреждений. Все объекты класса Евклид должны находиться в своих обычных условиях содержания."
 
 /decl/security_level/default/site53/code_blue
 	name = "code blue"
@@ -56,8 +56,8 @@
 	overlay_alarm = "alarm_blue"
 	overlay_status_display = "status_display_blue"
 
-	up_description = "Code Blue procedures now in effect. A test on a Keter SCP will commence shortly. All class D should return to their cells and await the all-clear at this time. Guards are to be posted at sensitive entry area's and maintain their post there until the all clear. Engineering and Medical staff are confined to their departments or relevant work area's for this test. Civilian and Scientists unrelated to the on-going test are to be escorted to a safe place before the test commences and kept there until the all clear. Violation of these procedures is grounds for immediate termination."
-	down_description = "Code Blue procedures now in effect. Code Red has been resolved, but all area's should be swept for threats extensively, and the integrity of all chambers should be inspected. All SCP's must be accounted for."
+	up_description = "Запущены процедуры Синего кода. В ближайшее время начнутся испытания на объектах класса Кетер. Все сотрудники Класса D, должны вернуться в свои камеры и ждать окончания испытаний. Охрана должна занять посты в наиболее важных зонах, а также на КПП. Инженерный и Медицинский персонал должен оставаться в своих отделах или других закреплённых за ним зонах. Гражданские лица и ученые никак не связанные с проведением испытаний, должны быть сопровождены в безопасную зону, и не покидать её вплоть до окончания проведения испытаний. Нарушение данных процедур является основанием для немедленного устранения."
+	down_description = "Запущены процедуры Синего кода. Красный код был отменён, но остаётся необходимым осмотреть все зоны на наличие каких-либо угроз, а также проверить камеры объектов класса Кетер на наличие любых повреждений. Все объекты класса Кетер должны находиться в своих обычных условиях содержания."
 
 /decl/security_level/default/site53/code_orange
 	name = "code orange"
@@ -76,11 +76,11 @@
 	var/static/datum/announcement/priority/security/security_announcement_orange = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/AI/announcer/codered.ogg'))
 
 /decl/security_level/default/site53/code_orange/switching_up_to()
-	security_announcement_orange.Announce("Code Orange procedures are now in effect. A Euclid SCP has broken containment and its current whereabouts are unknown. Security should investigate and focus on recontainment as a first priority, or request an MTF unit to assist.", "Attention! Code Orange alert procedures now in effect!")
+	security_announcement_orange.Announce("Запущены процедуры Оранжевого кода. Объект класса Евклид нарушил условия содержания и его текущее местоположение неизвестно. Охрана должна немедленно начать поиски и сосредоточиться на восстановлении условий содержания, или запросить МОГ для урегулирования сиутации.", "Внимание! Были запущены процедуры Оранжевого кода!")
 	notify_station()
 
 /decl/security_level/default/site53/code_orange/switching_down_to()
-	security_announcement_orange.Announce("Code Orange procedures now in effect. All Keter SCP's have been recontained, but one or more Euclid SCP remains unaccounted for. Security should intensify searches to all area's to locate, and recontain the affected SCP's.", "Attention! Code Orange alert procedures now in effect!")
+	security_announcement_orange.Announce("Запущены процедуры Оранжевого кода. Все объекты класса Кетер были возвращены в свои условия содержания, но один или несколько объектов класса Евклид по прежнему остаются на свободе. Охрана должна как можно быстрее обнаружить эти объекты и восстановить их условия содержания.", "Внимание! Были запущены процедуры Оранжевого кода!")
 	notify_station()
 
 /decl/security_level/default/site53/code_red
@@ -100,11 +100,11 @@
 	var/static/datum/announcement/priority/security/security_announcement_red = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/AI/announcer/codered.ogg'))
 
 /decl/security_level/default/site53/code_red/switching_up_to()
-	security_announcement_red.Announce("Code Red procedures are now in effect. A Keter SCP has broken containment and its current whereabouts are unknown. Security should investigate and focus on recontainment as a first priority, or request an MTF unit to assist.", "Attention! Code red alert procedures now in effect!")
+	security_announcement_red.Announce("Запущены процедуры Красного кода. Объект класса Кетер нарушил условия содержания и его текущее местоположение неизвестно. Охрана должна немедленно начать поиски и сосредоточиться на восстановлении условий содержания, или запросить МОГ для урегулирования сиутации.", "Внимание! Были запущены процедуры Красного кода!")
 	notify_station()
 
 /decl/security_level/default/site53/code_red/switching_down_to()
-	security_announcement_red.Announce("Code Red procedures now in effect. Code Black has been canceled, making the facility largely accessible once more, but one or more Keter SCP's remain at large. Security should focus their efforts on recontaining the SCP. Code Red evacuation procedures are now in effect, consult the relevant SoP section for more information.", "Attention! Code red alert procedures now in effect!")
+	security_announcement_red.Announce("Запущены процедуры Красного кода. Чёрный код был отменён, сделав большую часть комплекса снова доступной, но один или несколько объектов класса Кетер по прежнему остаются на свободе. Охрана должна как можно быстрее обнаружить эти объекты и восстановить их условия содержания. Эвакуационные процедуры Красного кода в настоящий момент активны, более подробную информацию можно узнать в соответствующем разделе СРП", "Внимание! Были запущены процедуры Красного кода!")
 	notify_station()
 
 /decl/security_level/default/site53/code_black
@@ -124,11 +124,11 @@
 	var/static/datum/announcement/priority/security/security_announcement_black = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/AI/announcer/codeblack.ogg'))
 
 /decl/security_level/default/site53/code_black/switching_up_to()
-	security_announcement_black.Announce("The site is experiencing multiple keter and euclid level containment breaches. Full site lockdown initiated.", "Attention! Code Black alert procedures now in effect!")
+	security_announcement_black.Announce("Комплекс в настоящий момент подвергся множественному нарушению условий содержания объектов класса Кетер и Евклид. Инициирована полная блокировка Зоны.", "Внимание! Были запущены процедуры Чёрного кода!")
 	notify_station()
 
 /decl/security_level/default/site53/code_black/switching_down_to()
-	security_announcement_black.Announce("The Site has been secured from subversive elements. Security is to do a mandatory sweep of the facility to make sure all SCP's remained inside containment.", "Attention! Code Black alert procedures now in effect!")
+	security_announcement_black.Announce("Комплекс был успешно защищён от подрывной деятельности враждебных групп. Охрана должна проверить весь комплекс и как можно быстрее восстановить условия содержания всех объектов, которые по прежнему остаются на свободе.", "Внимание! Были запущены процедуры Чёрного кода!")
 	notify_station()
 
 /decl/security_level/default/site53/code_gray
@@ -143,12 +143,12 @@
 	overlay_alarm = "grey_alarm"
 	overlay_status_display = "status_display_grey"
 
-	var/static/datum/announcement/priority/security/security_announcement_gray = new(do_log = 0, do_newscast = 1, new_sound = sound())
+	var/static/datum/announcement/priority/security/security_announcement_gray = new(do_log = 0, do_newscast = 1, new_sound = sound('sound/FIJ_Team/codegray.ogg'))
 
 /decl/security_level/default/site53/code_gray/switching_up_to()
-	security_announcement_gray.Announce("There have been confirmed reports of a hostile Group of Interest having infiltrated the Site. Security is allowed to terminate the threats." ,"Attention! Code Gray alert procedures now in effect!")
+	security_announcement_gray.Announce("Были получены подтверждённые сообщения о проникновении на территорию Комплекса враждебных групп. Охране дозволяется использовать все необходимые средства для устранения возникших угроз." ,"Внимание! Были запущены процедуры Серого кода!")
 	notify_station()
 
 /decl/security_level/default/site53/code_gray/switching_down_to()
-	security_announcement_gray.Announce("The Site's Nuclear Detonation has been canceled, however, the site should be swept for subversive elements before returning to normal operations.", "Attention! Code Gray alert procedures now in effect!")
+	security_announcement_gray.Announce("Детонация Ядерных боеголовок Комплекса была отменена, тем не менее, прежде чем вернуться к выполнению стандартных процедур, все враждебные группы проникшие на его территорию должны быть как можно быстрее устранены.", "Внимание! Были запущены процедуры Серого кода!")
 	notify_station()

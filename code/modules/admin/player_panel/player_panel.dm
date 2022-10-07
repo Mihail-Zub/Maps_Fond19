@@ -10,7 +10,8 @@
 /datum/admins/proc/player_panel_new()//The new one
 	if(!usr.client.holder || !(check_rights(R_ADMIN|R_MOD, FALSE)))
 		return
-	var/dat = "<html>"
+	var/dat = {"<html>
+	<meta charset=\"UTF-8\">"}
 
 	//javascript, the part that does most of the work~
 	dat += {"
@@ -171,6 +172,7 @@
 
 	//title + search bar
 	dat += {"
+	<meta charset=\"UTF-8\">
 		<table width='560' align='center' cellspacing='0' cellpadding='5' id='maintable'>
 			<tr id='title_tr'>
 				<td align='center'>
@@ -284,7 +286,9 @@
 	if (!usr.client.holder || !(usr.client.holder.rights & R_ADMIN|R_MOD))
 		return
 
-	var/dat = "<html>"
+	var/dat = {"<html>
+	<meta charset=\"UTF-8\">
+	"}
 	dat += "<body><table border=1 cellspacing=5><B><tr><th>Key</th><th>Name</th><th>Real Name</th><th>PP</th><th>CID</th><th>IP</th><th>JMP</th><th>Notes</th></tr></B>"
 	//add <th>IP:</th> to this if wanting to add back in IP checking
 	//add <td>(IP: [M.lastKnownIP])</td> if you want to know their ip to the lists below
@@ -327,7 +331,7 @@
 		return
 
 	var/dat = list()
-	dat += "<html><head><title>Round Status</title></head><body><h1><B>Round Status</B></h1>"
+	dat += "<html><meta charset=\"UTF-8\"><head><title>Round Status</title></head><body><h1><B>Round Status</B></h1>"
 	dat += "Current Game Mode: <B>[SSticker.mode.name]</B><BR>"
 	dat += "Round Duration: <B>[DisplayTimeText(world.time - SSticker.round_start_time)]</B><BR>"
 	dat += "<B>Evacuation</B><BR>"

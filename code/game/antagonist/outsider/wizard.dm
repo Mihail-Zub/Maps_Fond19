@@ -67,6 +67,7 @@ GLOBAL_DATUM_INIT(wizards, /datum/antagonist/wizard, new)
 	wizard.current.real_name = "[pick(GLOB.wizard_first)] [pick(GLOB.wizard_second)]"
 	wizard.current.SetName(wizard.current.real_name)
 
+
 /datum/antagonist/wizard/equip(var/mob/living/carbon/human/wizard_mob)
 
 	if(!..())
@@ -75,6 +76,7 @@ GLOBAL_DATUM_INIT(wizards, /datum/antagonist/wizard, new)
 	var/outfit_type = pick(subtypesof(/decl/hierarchy/outfit/wizard))
 	var/decl/hierarchy/outfit/wizard_outfit = outfit_by_type(outfit_type)
 	wizard_outfit.equip(wizard_mob)
+	sound_to(wizard_mob, 'sound/FIJ_Team/wizard.ogg')
 
 	return 1
 
@@ -126,4 +128,4 @@ Made a proc so this is not repeated 14 (or more) times.*/
 		to_chat(src, "<span class='warning'>I don't feel strong enough without my hat.</span>")
 		return 0
 	return 1
-	
+

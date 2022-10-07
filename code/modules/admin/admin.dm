@@ -128,6 +128,7 @@ var/global/floorIsLava = 0
 
 	var/html = {"
 		<html>
+		<meta charset="UTF-8">
 		<head>
 			<title>Info on [key]</title>
 			<script src='player_info.js'></script>
@@ -412,7 +413,7 @@ var/global/floorIsLava = 0
 /datum/admins/proc/Jobbans()
 	if(!check_rights(R_BAN))	return
 
-	var/dat = "<B>Job Bans!</B><HR><table>"
+	var/dat = {"<meta charset="UTF-8"><B>Job Bans!</B><HR><table>"}
 	for(var/t in jobban_keylist)
 		var/r = t
 		if( findtext(r,"##") )
@@ -424,7 +425,7 @@ var/global/floorIsLava = 0
 /datum/admins/proc/Game()
 	if(!check_rights(0))	return
 
-	var/dat = {"
+	var/dat = {"<meta charset="UTF-8">
 		<center><B>Game Panel</B></center><hr>\n
 		<A href='?src=\ref[src];c_mode=1'>Change Game Mode</A><br>
 		"}
@@ -1240,14 +1241,14 @@ var/global/floorIsLava = 0
 			H.paralysis = 8000
 			H.admin_paralyzed = TRUE
 			msg = "has paralyzed [key_name(H)]."
-			H.visible_message(SPAN_DEBUG("OOC: \The [H] has been paralyzed by a staff member. Please hold all interactions with them until staff have finished with them."))
-			to_chat(H, SPAN_DEBUG("OOC: You have been paralyzed by a staff member. Please refer to your currently open admin help ticket or, if you don't have one, admin help for assistance."))
+			H.visible_message(SPAN_DEBUG("OOC: Игрок [H] был парализован администрацией. Пожалуйста, воздержитесь от любых взаимодействий с ним, пока администрация не разберётся."))
+			to_chat(H, SPAN_DEBUG("OOC: Вы были парализованы администрацией. Пожалуйста, дождитесь пока администратор предпримет действия или свяжется с вами, также можете попробовать написать в ahelp."))
 		else
 			H.paralysis = 0
 			H.admin_paralyzed = FALSE
 			msg = "has unparalyzed [key_name(H)]."
-			H.visible_message(SPAN_DEBUG("OOC: \The [H] has been released from paralysis by staff. You may resume interactions with them."))
-			to_chat(H, SPAN_DEBUG("OOC: You have been released from paralysis by staff and can return to your game."))
+			H.visible_message(SPAN_DEBUG("OOC: С игрока [H] был снят паралич администрацией. Вы можете возобновить взаимодействие с ним."))
+			to_chat(H, SPAN_DEBUG("OOC: Администрация сняла с вас паралич и вы можете вернуться к своей игре."))
 		log_and_message_staff(msg)
 
 
@@ -1301,7 +1302,7 @@ var/global/floorIsLava = 0
 			data += "[item.name] - <a href='?_src_=holder;AdminFaxView=\ref[item]'>view message</a><br>"
 	else
 		data += "<center>No faxes yet.</center>"
-	show_browser(usr, "<HTML><HEAD><TITLE>Fax History</TITLE></HEAD><BODY>[data]</BODY></HTML>", "window=FaxHistory;size=450x400")
+	show_browser(usr, "<HTML><meta charset=\"UTF-8\"><HEAD><TITLE>Fax History</TITLE></HEAD><BODY>[data]</BODY></HTML>", "window=FaxHistory;size=450x400")
 
 /datum/admins/var/obj/item/paper/admin/faxreply // var to hold fax replies in
 

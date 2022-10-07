@@ -100,7 +100,7 @@
 	memory += "[new_text]<BR>"
 
 /datum/mind/proc/show_memory(mob/recipient)
-	var/output = "<meta charset=\"utf-8\"><B>[current.real_name]'s Memory</B><HR>"
+	var/output = {"<meta charset=\"utf-8\"><B>[current.real_name]'s Memory</B><HR>"}
 	output += memory
 
 	if(objectives.len>0)
@@ -119,7 +119,7 @@
 		alert("Not before round-start!", "Alert")
 		return
 
-	var/out = "<meta charset=\"utf-8\"><B>[name]</B>[(current&&(current.real_name!=name))?" (as [current.real_name])":""]<br>"
+	var/out = {"<meta charset=\"utf-8\"><B>[name]</B>[(current&&(current.real_name!=name))?" (as [current.real_name])":""]<br>"}
 	out += "Mind currently owned by key: [key] [active?"(synced)":"(not synced)"]<br>"
 	out += "Assigned role: [assigned_role]. <a href='?src=\ref[src];role_edit=1'>Edit</a><br>"
 	out += "<hr>"
@@ -313,7 +313,7 @@
 				new_objective.target_amount = target_number
 
 			if ("custom")
-				var/expl = sanitize(input("Custom objective:", "Objective", objective ? objective.explanation_text : "") as text|null)
+				var/expl = sanitize(copytext_char(input("Custom objective:", "Objective", objective ? objective.explanation_text : "") as text|null))
 				if (!expl) return
 				new_objective = new /datum/objective
 				new_objective.owner = src

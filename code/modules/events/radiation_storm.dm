@@ -19,7 +19,7 @@
 		return res
 
 /datum/event/radiation_storm/announce()
-	command_announcement.Announce("ERROR: Containment of radioactive object class Euclid detected. Please evacuate into one of the shielded maintenance tunnels.", "[location_name()] Sensor Array", new_sound = GLOB.using_map.radiation_detected_sound, zlevels = affecting_z)
+	command_announcement.Announce("Внимание! Обнаружено аномальное радиоактивное излучение воздействующее на Комплекс сквозь толщу горных пород. Пожалуйста, укройтесь в одном из ближайших экранированных технически тоннелей.", "Система датчиков Комплекса", new_sound = GLOB.using_map.radiation_detected_sound, zlevels = affecting_z)
 
 /datum/event/radiation_storm/start()
 	..()
@@ -27,7 +27,7 @@
 
 /datum/event/radiation_storm/tick()
 	if(activeFor == enterBelt)
-		command_announcement.Announce("Initial recontainment procedures failed. Deploying MTF.", "[location_name()] Sensor Array", zlevels = affecting_z)
+		command_announcement.Announce("В район расположения Комплекса были направлены специалисты Фонда для урегулирования возникшей ситуации. Ожидайте следующее оповещение.", "Система датчиков Комплекса", zlevels = affecting_z)
 		if(prob(66))
 			radiate()
 		else
@@ -41,7 +41,7 @@
 		radiate()
 
 	else if(activeFor == leaveBelt)
-		command_announcement.Announce("Object recontained. Please allow for up to one minute while radiation levels dissipate, and report to the infirmary if you experience any unusual symptoms. Amnestics available upon request.", "[location_name()] Sensor Array", zlevels = affecting_z)
+		command_announcement.Announce("Аномалия вызвавшая повышенное радиоактивное излучение была устранена. Пожалуйста, не покидайте безопасные места ещё в течении пары минут, пока уровень радиации не вернётся к норме. Если вы почувствуете недомогание и ваше общее самочувствие ухудшится, обратитесь в Медицинский Отдел для получения врачебной помощи.", "Система датчиков Комплекса", zlevels = affecting_z)
 
 /datum/event/radiation_storm/proc/radiate()
 	var/radiation_level = rand(15, 35)

@@ -104,6 +104,10 @@ GLOBAL_DATUM_INIT(traitors, /datum/antagonist/traitor, new)
 	traitor_mob.StoreMemory("<b>Code Phrase</b>: [syndicate_code_phrase]", /decl/memory_options/system)
 	traitor_mob.StoreMemory("<b>Code Response</b>: [syndicate_code_response]", /decl/memory_options/system)
 	to_chat(traitor_mob, "Use the code words, preferably in the order provided, during regular conversation, to identify other agents. Proceed with caution, however, as everyone is a potential foe.")
+	if(istype(traitor_mob, /mob/living/silicon))
+		sound_to(traitor_mob, 'sound/FIJ_Team/robothack.ogg')
+	else
+		sound_to(traitor_mob, 'sound/FIJ_Team/traitor.ogg')
 
 /datum/antagonist/traitor/proc/spawn_uplink(var/mob/living/carbon/human/traitor_mob)
 	setup_uplink_source(traitor_mob, DEFAULT_TELECRYSTAL_AMOUNT)

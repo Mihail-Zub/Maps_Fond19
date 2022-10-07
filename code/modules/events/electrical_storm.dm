@@ -17,11 +17,11 @@
 	..()
 	switch(severity)
 		if(EVENT_LEVEL_MUNDANE)
-			command_announcement.Announce("A minor breach of anomalous containment near [location_name()] has been detected. Please watch out for possible electrical discharges.", "[location_name()] Sensor Array", zlevels = affecting_z)
+			command_announcement.Announce("Возле Комплекса обнаружено незначительное проявление аномальной электромагнитной активности. Пожалуйста, будьте готовы к возможным сбоям в работе электрооборудования.", "Система датчиков Комплекса", zlevels = affecting_z)
 		if(EVENT_LEVEL_MODERATE)
-			command_announcement.Announce("A major breach of anomalous containment near [location_name()] has been detected. Please secure sensitive electrical equipment until the event passes.", "[location_name()] Sensor Array", new_sound = GLOB.using_map.electrical_storm_moderate_sound, zlevels = affecting_z)
+			command_announcement.Announce("Возле Комплекса обнаружено значительное проявление аномальной электромагнитной активности. Пожалуйста, обезопасьте всё чувствительное электрооборудование во избежание его поломки.", "Система датчиков Комплекса", new_sound = GLOB.using_map.electrical_storm_moderate_sound, zlevels = affecting_z)
 		if(EVENT_LEVEL_MAJOR)
-			command_announcement.Announce("Alert. A possible YK-class end-of-the-world event has been triggered by anomalous activity at another Foundation Site. It is recommended to immediately secure sensitive electrical equipment until the situation passes.", "[location_name()] Sensor Array", new_sound = GLOB.using_map.electrical_storm_major_sound, zlevels = affecting_z)
+			command_announcement.Announce("Внимание! Высокая аномальная электромагнитная активность была спровоцирована в результате неизвестного события на другом объекте Фонда. Рекомендуется немедленно обезопасить всё чувствительное электрооборудование, пока ситуация не разрешится.", "Система датчиков Комплекса", new_sound = GLOB.using_map.electrical_storm_major_sound, zlevels = affecting_z)
 
 /datum/event/electrical_storm/start()
 	..()
@@ -77,4 +77,4 @@
 
 /datum/event/electrical_storm/end()
 	..()
-	command_announcement.Announce("Anomalous objects pertaining to the ongoing electrical disruption have been recontained. Please repair any electrical overloads.", "Electrical Storm Alert", zlevels = affecting_z)
+	command_announcement.Announce("Аномальная активность, связанная с нарушением работы электрооборудования, была нейтрализована. Пожалуйста, устраните все возможные неисправности вызванные этим событием.", "Система датчиков Комплекса", zlevels = affecting_z)

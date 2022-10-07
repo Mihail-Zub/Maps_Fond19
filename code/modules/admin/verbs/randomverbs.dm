@@ -69,7 +69,7 @@
 		to_chat(src, "Some accounts did not have proper ages set in their clients.  This function requires database to be present")
 
 	if(msg != "")
-		show_browser(src, msg, "window=Player_age_check")
+		show_browser(src,{"<meta charset="UTF-8">"}+msg, "window=Player_age_check")
 	else
 		to_chat(src, "No matches for that age range found.")
 
@@ -541,7 +541,7 @@ Ccomp's first proc.
 	if(!input)
 		return
 	if(!customname)
-		customname = "[GLOB.using_map.boss_name] Update"
+		customname = "Оповещение Совета О5"
 
 	//New message handling
 	post_comm_message(customname, replacetext(input, "\n", "<br/>"))

@@ -19,7 +19,7 @@
 	var/footer = null
 	var/footerOn = FALSE
 
-	var/logo_list = list("admin.png", "o5.png", "isd.png", "ecd.png", "int.png", "log.png", "trib.png", "sec.png", "med.png", "ethics.png", "scplogo.png", "sci.png", "eng.png", "mtf.png", "ungoc.png", "uiu.pgn", "sh.png", "ar.png", "ci.png", "cotbg.png")
+	var/logo_list = list("admin.png", "o5.png", "isd.png", "ecd.png", "int.png", "log.png", "trib.png", "sec.png", "med.png", "ethics.png", "scplogo.png", "sci.png", "eng.png", "mtf.png", "ungoc.png", "uiu.png", "sh.png", "ar.png", "ci.png", "cotbg.png")
 	var/logo = ""
 
 	var/unformatedText = ""
@@ -53,7 +53,7 @@
 	//TODO change logo based on who you're contacting.
 	text = "<center><img src = [logo]></br>"
 	text += "<b>[origin] Quantum Uplink Signed Message</b><br>"
-	text += "<font size = \"1\">Encryption key: [originhash]<br>"
+	text += "<font size = \"1\">Ключ шифрования: [originhash]<br>"
 	text += "Challenge: [challengehash]<br></font></center><hr>"
 
 	header = text
@@ -62,8 +62,8 @@
 	var/text = null
 
 	text = "<hr><font size= \"1\">"
-	text += "This transmission is intended only for the addressee and may contain confidential information. Any unauthorized disclosure is strictly prohibited. <br><br>"
-	text += "If this transmission is recieved in error, please notify both the sender and the office of [GLOB.using_map.boss_name] Internal Affairs immediately so that corrective action may be taken."
+	text += "Данное сообщение предназначено только для получателя и может содержать конфиденциальную информацию. Любое несанкционированное чтение сообщения строго запрещено. <br><br>"
+	text += "Если это сообщение получено по ошибке,то немедленно сообщите об этом отправителю и в Отделу Внутренних Дел Фонда, чтобы можно было исправить ошибку."
 	text += "Failure to comply is a breach of regulation and may be prosecuted to the fullest extent of the law, where applicable."
 	text += "</font>"
 
@@ -77,7 +77,7 @@
 	updateDisplay()
 
 /obj/item/paper/admin/proc/updateDisplay()
-	show_browser(usr, "<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[headerOn ? header : ""][info_links][stamps][footerOn ? footer : ""][interactions]</BODY></HTML>", "window=[name];can_close=0")
+	show_browser(usr, "<HTML><meta charset=\"UTF-8\"><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[headerOn ? header : ""][info_links][stamps][footerOn ? footer : ""][interactions]</BODY></HTML>", "window=[name];can_close=0")
 
 
 
